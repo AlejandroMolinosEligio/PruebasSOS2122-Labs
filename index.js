@@ -24,11 +24,6 @@ app.get(BASE_API_URL+"/contacts",(req, res)=>{
     res.send(JSON.stringify(contats,null,2));
 })
 
-app.get("/caritas",(req,res)=>{
-    console.log("Requested / route");
-    res.send("<html><body>"+cool()+"</body></html>");
-});
-
 app.get(BASE_API_URL+"/docs",(req,res)=>
 {
     res.redirect(URL_PORTAL)
