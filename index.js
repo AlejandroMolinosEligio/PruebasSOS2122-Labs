@@ -28,6 +28,10 @@ app.get(BASE_API_URL+"/contacts",(req, res)=>{
     res.send(JSON.stringify(contats,null,2));
 })
 
+app.get("/api",(req, res)=>{
+    res.send({result : true});
+})
+
 app.get("/caritas",(req,res)=>{
     console.log("Requested / route");
     res.send("<html><body>"+cool()+"</body></html>");
