@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx newman run ./test/backend.json -e ./test/env/local.json"
   },
   "author": "pablofm",
   "license": "ISC",

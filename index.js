@@ -1,10 +1,12 @@
+const cool = require("cool-ascii-faces");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 const BASE_API_URL = "/api/v1";
 const URL_PORTAL = "https://documenter.getpostman.com/view/20091922/UVsPP4n9";
@@ -20,9 +22,20 @@ var contats = [
     }
 ]
 
+app.use("/", express.static('public'));
+
 app.get(BASE_API_URL+"/contacts",(req, res)=>{
     res.send(JSON.stringify(contats,null,2));
 })
+
+app.get("/api",(req, res)=>{
+    res.send({result : true});
+})
+
+app.get("/caritas",(req,res)=>{
+    console.log("Requested / route");
+    res.send("<html><body>"+cool()+"</body></html>");
+});
 
 app.get(BASE_API_URL+"/docs",(req,res)=>
 {
